@@ -1,1 +1,1 @@
-# Yams-app-Thibault-Am-lie
+# Yams-app-Thibault-Amelie
