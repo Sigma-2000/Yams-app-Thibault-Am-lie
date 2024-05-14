@@ -1,11 +1,9 @@
 function Game() {
-  
   return (
     <>
-       <p>Game</p>
-      
+      <p>Game</p>
     </>
-  )
+  );
 }
 
-export default Game
+export default Game;

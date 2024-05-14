@@ -1,11 +1,9 @@
 function Admin() {
-  
   return (
     <>
-       <p>Admin</p>
-      
+      <p>Admin</p>
     </>
-  )
+  );
 }
 
-export default Admin
+export default Admin;
