@@ -1,7 +1,10 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  padding: 0;
+  margin: 0;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -25,14 +28,14 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  min-width: 100vw;
   min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 1.5rem;
   line-height: 1.1;
+  font-family: sans-serif;
 }
 
 button {
@@ -52,6 +55,37 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+header {
+  background-color: #b9e3f3;
+  width: 100%;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 0.9rem;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav li a {
+  color: #2E2D2D
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+nav li a:active {
+  color: orange;
 }
 
 @media (prefers-color-scheme: light) {
