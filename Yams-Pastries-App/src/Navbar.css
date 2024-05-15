@@ -1,0 +1,36 @@
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #b9e3f3;
+  width: 100%;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 0.9rem;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav li a {
+  color: #2e2d2d;
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+nav li a.active {
+  color: orange;
+}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "../Homepage.css";
 import "../index.css";
@@ -14,7 +15,9 @@ function Homepage() {
         </p>
       </section>
       <div>
-        <button>Découvrez le jeu</button>
+        <button>
+          <Link to="/game">Découvrez le jeu</Link>
+        </button>
       </div>
     </>
   );
