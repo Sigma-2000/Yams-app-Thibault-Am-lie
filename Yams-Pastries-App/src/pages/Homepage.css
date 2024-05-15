@@ -1,9 +1,18 @@
 section {
     background-color: #f3e5ab;
+    padding: 0.5rem;
 }
 
 .container {
     margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 0;
 }
 
 button {
@@ -53,7 +62,13 @@ body {
     }
     section {
         max-width: 50vw;
-        padding: 1.5rem;
         border-radius: 1rem;
+        margin: 0 auto;
+    }
+
+    section p {
+        text-align: left;
+        font-size: 2rem;
+        
     }
   }
