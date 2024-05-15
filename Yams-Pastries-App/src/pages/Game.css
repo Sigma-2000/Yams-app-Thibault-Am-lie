@@ -15,3 +15,21 @@ button {
 button:hover {
   background-color: #278ead; 
 }
+
+.button-disabled {
+  background-color: #ccc;  
+  color: #666;
+  cursor: not-allowed;
+}
+
+.button-disabled:hover{
+  background-color: #ccc ;
+}
+
+.message-win {
+  color: green;
+}
+
+.message-loose {
+  color: red;
+}

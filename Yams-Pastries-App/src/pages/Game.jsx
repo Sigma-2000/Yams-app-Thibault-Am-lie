@@ -6,19 +6,32 @@ import "./Game.css";
 
 function Game() {
   const dispatch = useDispatch();
-  const { trials, gameActive } = useSelector((state) => state.dice);
+  const { trials, gameActive, hasWon, message } = useSelector((state) => state.dice);
 
   const handleRollDice = () => {
     dispatch(rollDice());
   };
-//implémenter le message quand on gagne et le texte du bouton qui va changer
+  const messageClass = hasWon ? "message-win" : "message-loose";
+
+  const buttonText = gameActive
+    ? `Jouer, il vous reste ${trials} essais`
+    : hasWon
+    ? "Vous avez gagné!"
+    : "Plus d'essais";
+    
+
   return (
     <>
       <p>ici nav bar et bannière</p>
       <PresentationRegles />
       <Dice />
-      <button onClick={handleRollDice} disabled={!gameActive}>
-        Jouer, il vous reste {trials} essais
+      <div className={messageClass}>{message}</div>
+      <button
+        onClick={handleRollDice}
+        disabled={!gameActive}
+        className={!gameActive ? "button-disabled" : ""}
+      >
+        {buttonText}
       </button>
     </>
   );
