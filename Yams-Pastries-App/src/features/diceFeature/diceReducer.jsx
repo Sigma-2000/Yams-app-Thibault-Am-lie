@@ -8,6 +8,7 @@ const diceSlice = createSlice({
     diceValues: ["?", "?", "?", "?", "?"],
     trials: 3,
     hasWon: false,
+    prizeQuantity: 0,
     gameActive: true,
     message: "",
   },
@@ -17,8 +18,9 @@ const diceSlice = createSlice({
         state.diceValues = rollNewDiceValues(state.diceValues);
         const winCheck = checkWinCondition(state.diceValues);
         state.hasWon = winCheck.win;
+        state.prizeQuantity = winCheck.prize;
         if (state.hasWon) {
-          state.message = `Bravo vous avez gagné ${winCheck.prize} pâtisserie(s)! Appelez nous au 06.14.13.12.07`; 
+          state.message = `Bravo vous avez gagné ${state.prizeQuantity} pâtisserie(s)! Appelez nous au 06.14.13.12.07`; 
         } else {
           state.message = "Retentez votre chance!"; 
         }
