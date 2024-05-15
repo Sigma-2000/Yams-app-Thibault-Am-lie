@@ -8,7 +8,10 @@ h1 {
 header {
   background-color: #b9e3f3;
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 nav ul {
