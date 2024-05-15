@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import "../Homepage.css";
+import "./Homepage.css";
+import {useGetAllPastriesQuery} from '../features/pastriesFeature/pastriesReducer'
 
 function Homepage() {
+  const { data, error, isLoading } = useGetAllPastriesQuery()
+  console.log(data);
   return (
     <>
     <div className="container">
