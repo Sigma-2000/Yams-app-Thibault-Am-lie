@@ -1,21 +1,17 @@
-import PropTypes from 'prop-types';
-import "./Dice.css" 
+import { useSelector } from "react-redux";
+import "./Dice.css";
 
-function Dice({values}) {
-    return (
-      <div className="dice-container">
-        {values.map((value, index) => (
-          <div key={index} className="die">{value}</div>
-        ))}
-      </div>
-    )
-}
-
-Dice.propTypes = {
-  values: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.string, 
-    PropTypes.number  
-  ])).isRequired
+function Dice() {
+  const values = useSelector((state) => state.dice.diceValues);
+  return (
+    <div className="dice-container">
+      {values.map((value, index) => (
+        <div key={index} className="die">
+          {value}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default Dice;

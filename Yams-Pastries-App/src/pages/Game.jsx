@@ -1,25 +1,25 @@
 import PresentationRegles from "../components/PresentationRegles";
 import Dice from "../components/Dice";
-import { useState } from "react";
-import { rollNewDiceValues } from "../services/utilsGame"
+import { useDispatch, useSelector } from "react-redux";
+import { rollDice } from "../features/diceFeature/diceReducer";
 import "./Game.css";
 
 function Game() {
-  const [diceValues, setDiceValues] = useState(["?", "?", "?", "?", "?"]);
-//créer store pour gérer état ! 
+  const dispatch = useDispatch();
+  const { trials, gameActive } = useSelector((state) => state.dice);
 
-  const rollDice = () => {
-    const newValues = rollNewDiceValues(diceValues);
-    setDiceValues(newValues);
+  const handleRollDice = () => {
+    dispatch(rollDice());
   };
-  
-
+//implémenter le message quand on gagne et le texte du bouton qui va changer
   return (
     <>
       <p>ici nav bar et bannière</p>
       <PresentationRegles />
-      <Dice values={diceValues} />
-      <button onClick={rollDice}>Jouer, il vous reste essais</button>
+      <Dice />
+      <button onClick={handleRollDice} disabled={!gameActive}>
+        Jouer, il vous reste {trials} essais
+      </button>
     </>
   );
 }
