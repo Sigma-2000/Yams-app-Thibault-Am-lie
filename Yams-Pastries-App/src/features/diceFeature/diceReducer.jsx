@@ -34,5 +34,5 @@ const diceSlice = createSlice({
   },
 });
 
-export default diceSlice.reducer;
+export const diceReducer= diceSlice.reducer;
 export const { rollDice } = diceSlice.actions;

@@ -22,7 +22,6 @@ function Game() {
 
   return (
     <>
-      <p>ici nav bar et bannière</p>
       <PresentationRegles />
       <Dice />
       <div className={messageClass}>{message}</div>
