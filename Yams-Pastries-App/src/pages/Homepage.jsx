@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import "../Homepage.css";
-import "../index.css";
 
 function Homepage() {
   return (
     <>
-      <Navbar />
+    <div className="container">
       <section>
         <p>
           Préparez-vous à savourer chaque victoire avec notre jeu de yams où
@@ -14,6 +12,7 @@ function Homepage() {
           pâtisseries artisanales. Êtes-vous prêt à déguster le succès ?
         </p>
       </section>
+    </div>
       <div>
         <button>
           <Link to="/game">Découvrez le jeu</Link>

@@ -2,6 +2,7 @@ h1 {
   font-size: 1.5rem;
   line-height: 1.1;
   font-family: sans-serif;
+  text-align: center;
 }
 
 header {
@@ -13,6 +14,7 @@ header {
 nav ul {
   list-style-type: none;
   display: flex;
+  justify-content: center;
 }
 
 nav li {

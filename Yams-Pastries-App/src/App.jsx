@@ -3,10 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Admin from "./pages/Admin";
 import Game from "./pages/Game";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
+    <Navbar />
       <Routes>
         <Route path={"/"} element={<Homepage />} />
         <Route path="/game" element={<Game />} />
