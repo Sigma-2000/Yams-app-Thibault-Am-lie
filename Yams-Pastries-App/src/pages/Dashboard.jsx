@@ -1,4 +1,4 @@
-
+import Pastries from "../components/Pastries"
 
 function Dashboard() {
  
@@ -7,6 +7,7 @@ function Dashboard() {
      
       <div className="dashboard-content">
         <p>Dashboard</p>
+        <Pastries/>
       </div>
     </div>
   );
