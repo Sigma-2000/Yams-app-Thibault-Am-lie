@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useLoginMutation } from '../features/authFeature/authReducer';
+import { useNavigate } from 'react-router-dom'; 
+import './Admin.css'
 
 
 function Admin() {
@@ -8,9 +10,8 @@ function Admin() {
   const [password, setPassword]= useState('');
 
   const [login, { isLoading }] = useLoginMutation();
+  const navigate = useNavigate();
   
-
-
   const validateEmail = (email) => {
       const emailRegex = /^[^@]+@[^@]+$/;
       return emailRegex.test(email);
@@ -39,6 +40,7 @@ function Admin() {
         if (result.data) {
           console.log('Connexion réussie', result.data);
           setError('');
+          navigate('/dashboard');
         } else {
           setError('Erreur d\'authentification.');
         }
@@ -49,23 +51,25 @@ function Admin() {
     };
 
   return (
-      <div>
+       <div className="login-container">
           <h2>Connexion</h2>
           <form onSubmit={handleSubmit}>
-              <div>
+              <div className="form-group">
                   <label>Email:</label>
                   <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      className="form-input"
                   />
               </div>
-              <div>
+              <div className="form-group">
                   <label>Mot de passe:</label>
                   <input
                       type="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
+                      className="form-input"
                   />
               </div>
               {error && <p style={{ color: 'red' }}>{error}</p>}

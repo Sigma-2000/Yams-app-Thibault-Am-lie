@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import Admin from "./pages/Admin";
 import Game from "./pages/Game";
 import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path={"/"} element={<Homepage />} />
         <Route path="/game" element={<Game />} />
         <Route path={"/admin"} element={<Admin />} />
+        <Route path={"/dashboard"} element={<Dashboard />} />
         <Route path={"*"} element={<div>Oups cette page n'existe pas</div>} />
       </Routes>
     </>
