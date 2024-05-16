@@ -1,14 +1,13 @@
 h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.1;
-  font-family: sans-serif;
+  font-family: "pacifico";
   text-align: center;
 }
 
 header {
   background-color: #b9e3f3;
   width: 100%;
-  text-align: center;
 }
 
 nav ul {
@@ -19,6 +18,7 @@ nav ul {
 
 nav li {
   margin-right: 0.9rem;
+  font-size: 1.5rem;
 }
 
 nav li:last-child {
@@ -35,4 +35,13 @@ nav li a:hover {
 
 nav li a.active {
   color: orange;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+  nav li {
+    font-size: 3rem;
+  }
 }
