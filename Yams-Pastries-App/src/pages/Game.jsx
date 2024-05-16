@@ -20,12 +20,12 @@ function Game() {
 
   useEffect(() => {
     if (hasWon && prizeQuantity > 0 && data) {
-      const availablePastries = [...data].filter((p) => p.quantity > 0);
+      const availablePastries = [...data].filter((pastries) => pastries.quantity > 0);
       if (availablePastries.length >= prizeQuantity) {
         const randomPrizes = [...availablePastries]
           .sort(() => 0.5 - Math.random())
           .slice(0, prizeQuantity);
-          const newPrizeMessage = `Venez nous reclamer : ${randomPrizes.map(p => p.name).join(' et ')}`;
+          const newPrizeMessage = `Venez nous reclamer : ${randomPrizes.map(pastries => pastries.name).join(' et ')}`;
           setPrizeMessage(newPrizeMessage);
       } else{
         setPrizeMessage("Pas assez de pâtisseries disponibles pour attribuer les prix. Veuillez nous excuser");
