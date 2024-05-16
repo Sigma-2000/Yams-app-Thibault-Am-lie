@@ -46,7 +46,7 @@ function Game() {
       <PresentationRegles />
       <Dice />
       <div className={messageClass}>{message}</div>
-      <div>{prizeMessage}</div>
+      <div className="prize">{prizeMessage}</div>
       <div className="button-container">
       <button
         onClick={handleRollDice}

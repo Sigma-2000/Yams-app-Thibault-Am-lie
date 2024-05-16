@@ -1,10 +1,13 @@
 import { useGetAllPastriesQuery } from "../features/pastriesFeature/pastriesReducer";
+import { useAddQuantityMutation } from "../features/crudFeature/crudReducer"; // Chemin vers ton fichier API
+
 import "./Pastries.css";
 import { useEffect, useState } from "react";
 
 function Pastries() {
   const { data, error, isLoading } = useGetAllPastriesQuery();
   const [pastries, setPastries] = useState([]);
+  const [addQuantity] = useAddQuantityMutation();
 
   useEffect(() => {
     if (data) {
@@ -12,7 +15,7 @@ function Pastries() {
     }
   }, [data]);
 
-  const incrementQuantity = (id) => {
+  const incrementQuantity = async (id) => {
     const updatedPastries = pastries.map((pastry) => {
       if (pastry.id === id) {
         return { ...pastry, quantity: pastry.quantity + 1 };
@@ -20,6 +23,12 @@ function Pastries() {
       return pastry;
     });
     setPastries(updatedPastries);
+    console.log(typeof(id))
+    try {
+      await addQuantity({ id, quantity: 1 }); 
+    } catch (err) {
+      console.error("Failed to increment quantity:", err);
+    }
   };
   const decrementQuantity = (id) => {
     const updatedPastries = pastries.map((pastry) => {

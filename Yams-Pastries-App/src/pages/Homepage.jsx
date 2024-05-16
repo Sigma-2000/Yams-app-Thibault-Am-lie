@@ -8,13 +8,13 @@ function Homepage() {
   return (
     <>
       <div className="container">
-        <section>
+        <div className="phrase-accroche">
           <p>
             Préparez-vous à savourer chaque victoire avec notre jeu de yams où
             chaque lancer de dés vous rapproche d'une délicieuse sélection de
             pâtisseries artisanales. Êtes-vous prêt à déguster le succès ?
           </p>
-        </section>
+        </div>
       </div>
       <div className="button-container">
         <button>
@@ -23,7 +23,7 @@ function Homepage() {
       </div>
       <h2>Les lots à gagner</h2>
       <div className="container">
-        <section>
+        <div className="lot-to-win">
       <ul>
         {error ? (
           <h5>Oh no, there was an error 😢 {error.message}</h5>
@@ -33,13 +33,13 @@ function Homepage() {
           data.map((pastry) => {
             return (
               <li key={pastry.id}>
-                Nom: {pastry.name} / quantité : {pastry.quantity}
+                {pastry.name} / quantité : {pastry.quantity}
               </li>
             );
           })
         ) : null}
       </ul>
-        </section>
+        </div>
       </div>
     </>
   );
