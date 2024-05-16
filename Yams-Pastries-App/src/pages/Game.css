@@ -1,15 +1,18 @@
-
+.button-container {
+  text-align: center; 
+}
 button {
   background-color: #57baD9; 
   color: white;
   border: none;
   padding: 10px 20px;
   text-align: center;
-  display: block;
+  display: inline-block;
   margin: 20px auto;
   font-size: 18px;
   cursor: pointer;
   border-radius: 4px;
+  width: max-content;
 }
 
 button:hover {

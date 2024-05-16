@@ -37,11 +37,3 @@ nav li a.active {
   color: orange;
 }
 
-@media (min-width: 768px) {
-  h1 {
-    font-size: 4rem;
-  }
-  nav li {
-    font-size: 3rem;
-  }
-}

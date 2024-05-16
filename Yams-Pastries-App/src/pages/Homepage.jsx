@@ -16,7 +16,7 @@ function Homepage() {
           </p>
         </section>
       </div>
-      <div>
+      <div className="button-container">
         <button>
           <Link to="/game">Découvrez le jeu</Link>
         </button>

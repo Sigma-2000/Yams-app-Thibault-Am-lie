@@ -47,6 +47,7 @@ function Game() {
       <Dice />
       <div className={messageClass}>{message}</div>
       <div>{prizeMessage}</div>
+      <div className="button-container">
       <button
         onClick={handleRollDice}
         disabled={!gameActive}
@@ -54,6 +55,7 @@ function Game() {
       >
         {buttonText}
       </button>
+      </div>
     </>
   );
 }

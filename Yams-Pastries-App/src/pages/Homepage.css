@@ -20,7 +20,9 @@ ul li {
   margin: 0;
   font-size: 1rem;
 }
-
+.button-container {
+  text-align: center; 
+}
 button {
   background-color: #57baD9; 
   color: white;
@@ -31,6 +33,7 @@ button {
   font-size: 18px;
   cursor: pointer;
   border-radius: 4px;
+  width: max-content;
 }
 
 button:hover {
