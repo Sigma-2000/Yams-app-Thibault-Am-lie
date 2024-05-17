@@ -3,7 +3,7 @@ import { useLoginMutation } from '../features/authFeature/authReducer';
 import { useNavigate } from 'react-router-dom'; 
 import './Admin.css'
 
-
+//TODO: aurait du mettre ça dans un composant login afin que la page ne gère que l'affichage
 function Admin() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');

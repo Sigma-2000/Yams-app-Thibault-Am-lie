@@ -4,7 +4,7 @@ import { useGetAllPastriesQuery } from "../features/pastriesFeature/pastriesRedu
 
 function Homepage() {
   const { data, error, isLoading } = useGetAllPastriesQuery();
-
+//TODO: aurait du mettre ça dans plusieurs composants afin que la page ne gère que l'affichage
   return (
     <>
       <div className="container">
