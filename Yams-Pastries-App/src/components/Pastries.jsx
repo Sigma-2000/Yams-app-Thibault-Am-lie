@@ -1,5 +1,5 @@
 import { useGetAllPastriesQuery } from "../features/pastriesFeature/pastriesReducer";
-import { useAddQuantityMutation } from "../features/crudFeature/crudReducer"; 
+import { useAddQuantityMutation, useDeletePastryMutation } from "../features/crudFeature/crudReducer"; 
 import "./Pastries.css";
 import { useEffect, useState } from "react";
 
@@ -7,6 +7,7 @@ function Pastries() {
   const { data, error, isLoading } = useGetAllPastriesQuery();
   const [pastries, setPastries] = useState([]);
   const [addQuantity] = useAddQuantityMutation();
+  const [deletePastry] = useDeletePastryMutation();
 
   useEffect(() => {
     if (data) {
@@ -35,14 +36,17 @@ function Pastries() {
       console.error("Failed to increment quantity:", err);
     }
   };
-  const decrementQuantity = (id) => {
-    const updatedPastries = pastries.map((pastry) => {
-      if (pastry.id === id && pastry.quantity > 0) {
-        return { ...pastry, quantity: pastry.quantity - 1 };
-      }
-      return pastry;
-    });
+
+  const decrementQuantity = async (id) => {
+    const updatedPastries = pastries.filter((pastry) => pastry.id !== id);
     setPastries(updatedPastries);
+
+    try {
+      const response = await deletePastry(id);
+      console.log("Response from server:", response);
+    } catch (err) {
+      console.error("Failed to delete pastry:", err);
+    }
   };
 
   return (

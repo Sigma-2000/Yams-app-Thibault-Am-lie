@@ -30,8 +30,18 @@ export const crudApi = createApi({
         return response;
       },
     }),
+    deletePastry: builder.mutation({
+      query: (id) => ({
+        url: `/api/pastry/${id}`,
+        method: "DELETE",
+      }),
+      transformResponse: (response) => {
+        console.log(response);
+        return response;
+      },
+    }),
   }),
 });
 
 
-export const { useAddQuantityMutation, useAddPastryMutation } = crudApi;
+export const { useAddQuantityMutation, useAddPastryMutation, useDeletePastryMutation } = crudApi;
