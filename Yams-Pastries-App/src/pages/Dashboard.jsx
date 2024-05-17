@@ -6,7 +6,6 @@ function Dashboard() {
     <div className="dashboard">
      
       <div className="dashboard-content">
-        <p>Dashboard</p>
         <Pastries/>
       </div>
     </div>

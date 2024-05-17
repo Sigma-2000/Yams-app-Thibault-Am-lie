@@ -23,5 +23,5 @@ export const authApi = createApi({
     }),
   }),
 });
-
+//endpoint logout ne fonctionne pas car on a doit sans doute lui fournir le jeton lors de la requete?
 export const { useLoginMutation, useLogoutQuery } = authApi;

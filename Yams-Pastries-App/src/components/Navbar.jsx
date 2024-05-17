@@ -1,10 +1,21 @@
-import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Navbar.css";
+import {useLogoutQuery} from "../features/authFeature/authReducer";
 
 const Navbar = () => {
+  const { refetch, isFetching } = useLogoutQuery();
   const location = useLocation();
   const isDashboard = location.pathname === "/dashboard";
+
+  const handleLogout = async () => {
+    try {
+      await refetch();
+      window.location.href = "/";
+    } catch (error) {
+      console.error("Failed to logout:", error);
+    }
+  };
+
 
   return (
     <header>
@@ -16,7 +27,9 @@ const Navbar = () => {
           </li>
           {isDashboard ? (
             <li>
-              <NavLink to="/">Logout</NavLink>
+              <NavLink to="/" onClick={handleLogout}>
+                {isFetching ? "Logging out..." : "Logout"}
+              </NavLink>
             </li>
           ) : (
             <li>
