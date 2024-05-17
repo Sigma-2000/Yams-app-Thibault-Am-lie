@@ -26,18 +26,18 @@ Ce projet comporte aussi une page admin sous couvert de se connecter et d'avoir 
 - Modification de la quantité des pâtisseries
 - Suppression de pâtisseries
 
-## Présentation du code de la page Game.jsx
+## Présentation du code du composant GameDisplay.jsx
 ## Structure du Code
 - **Importations et Déclarations**
 
-Le code commence par importer divers composants, hooks et fonctions nécessaires pour notre jeu. Cela inclut les composants PresentationRegles et Dice. J'ai choisi d'externaliser cela pour rendre mon code modulable, réutilisable et avoir des fichiers de code assez petit. 
+Le code commence par importer divers composants, hooks et fonctions nécessaires pour notre jeu. 
 On a aussi mes hooks useDispatch et useSelector de react-redux, qui permettent de gérer le store avec notamment
 l'action rollDice de Redux.
-On a l'import d'un autre store avec le hook useGetAllPastriesQuery qui permet de récupérer les données liés aux pâtisseries gagnés. On a également l'import du css ainsi que les hooks de base de React useEffect et useState.
+On a l'import d'un autre store avec le hook useGetAllPastriesQuery qui permet de récupérer les données liés aux pâtisseries gagnés. On a également l'import des hooks de base de React useEffect et useState.
 
-- **Composant Game**
+- **Composant GameDisplay**
 
-Le composant Game contient la mise en place et application de la logique du jeu. Il fais appel au store pour récupérer 
+Le composant GameDisplay contient la mise en place et application de la logique du jeu. Il fais appel au store pour récupérer 
 l'état des dès.
  Il utilise useDispatch pour envoyer une action Redux concernant le lancement du jeu et useSelector pour récupérer des morceaux de l'état global de Redux, tels que les essais restants, l'état du jeu, si le joueur a gagné, le message et la quantité de prix. Le hook useGetAllPastriesQuery est utilisé pour obtenir les données concernant les pâtisseries en faisant un appel Api gérer par RTK query.  
 On va initialiser useState pour créer un état local prizeMessage afin de stocker le message concernant les prix. Ce hook est nécessaire car React fonctionne sur l'immutabilité des données et on a besoin de lui donc pour muter cette donnée.
@@ -56,7 +56,7 @@ La classe CSS pour le message est déterminée en fonction de si le joueur a gag
 
 - **Rendu du composant**
 
-Le composant rend les éléments de l'interface utilisateur, affichant les composants PresentationRegles et Dice, le message de jeu, le message de prix, et un bouton qui permet de lancer le dé. Ce bouton est désactivé si le jeu n'est pas actif (se base sur le state des dès). En amélioration principale je pense que j'aurai pu mettre dans un composant à part cette partie et l'implémenter au même titre que Dice et PresentationPage pour que le composant page Game ne soit qu'un composant d'affichage. Ce qui aurait rendu encore plus modulable l'app. 
+Le composant rend les éléments de l'interface utilisateur lié au game: le message de jeu, le message de prix, et un bouton qui permet de lancer le dé. Ce bouton est désactivé si le jeu n'est pas actif (se base sur le state des dès). Il fais partie d'une page ou est rendu plusieurs composants ayant attrait à l'affichage du jeu. Cela a été conçu pour avoir un code modulable avec des fichiers de code petits et réutilisable. 
 
 ### Fonctionnement du Backend
 
