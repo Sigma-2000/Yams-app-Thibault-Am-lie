@@ -5,8 +5,7 @@ function Homepage() {
   return (
     <>
       <div>
-        {" "}
-        <PresentationGame />{" "}
+        <PresentationGame />
       </div>
     </>
   );
