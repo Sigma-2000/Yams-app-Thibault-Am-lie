@@ -1,6 +1,5 @@
 import { useGetAllPastriesQuery } from "../features/pastriesFeature/pastriesReducer";
-import { useAddQuantityMutation } from "../features/crudFeature/crudReducer"; // Chemin vers ton fichier API
-
+import { useAddQuantityMutation } from "../features/crudFeature/crudReducer"; 
 import "./Pastries.css";
 import { useEffect, useState } from "react";
 
@@ -23,9 +22,15 @@ function Pastries() {
       return pastry;
     });
     setPastries(updatedPastries);
-    console.log(typeof(id))
+    console.log(typeof id);
+    const newQuantity = updatedPastries.find(
+      (pastry) => pastry.id === id
+    ).quantity;
+    console.log("Updating pastry ID:", id, "to new quantity:", newQuantity);
+
     try {
-      await addQuantity({ id, quantity: 1 }); 
+      const response = await addQuantity({ id, quantity: newQuantity });
+      console.log("Response from server:", response);
     } catch (err) {
       console.error("Failed to increment quantity:", err);
     }
