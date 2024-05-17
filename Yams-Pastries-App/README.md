@@ -16,7 +16,8 @@ Ce projet comporte aussi une page admin sous couvert de se connecter et d'avoir 
 - **Notions** : https://www.notion.so/27219c671e5149fca5b242e4dcaf9de6?v=6a4fdda4c7cc407b8bb782bea40c882b
 - **Frontend** : React, Redux Toolkit, RTK Query (appel Api)
 - **Backend** : Node.js, Express (non implémenté par notre groupe)
-- **Persistance des données** :  stockage dans des stores redux 
+- **Persistance des données** : deux fichiers JSON dans le back : pastries.json et users.json
+
 
 ## Fonctionnalités
 - Jeu de dès Yams
