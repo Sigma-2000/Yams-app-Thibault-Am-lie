@@ -14,7 +14,7 @@ Ce projet comporte aussi une page admin sous couvert de se connecter et d'avoir 
 
 - **Wireframe** : https://www.figma.com/design/amhfu1LYMtPUs0zLtBKMoe/yams?node-id=0-1&t=FENK7PMfQqQc4SO8-0
 - **Notions** : https://www.notion.so/27219c671e5149fca5b242e4dcaf9de6?v=6a4fdda4c7cc407b8bb782bea40c882b
-- **Frontend** : React, Redux Toolkit, RTK Query (appel Api)
+- **Frontend** : React, Redux Toolkit, RTK Query (appel Api), React Router
 - **Backend** : Node.js, Express (non implémenté par notre groupe)
 - **Persistance des données** : deux fichiers JSON dans le back : pastries.json et users.json
 
