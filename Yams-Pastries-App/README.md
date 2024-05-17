@@ -1,9 +1,9 @@
 # Projet de Gestion de Pâtisseries
 
 ## Présentation
-Ce projet est un app permettant à un utilisateur lambda de pouvoir jouer au yams et de gagner des patisseries. 
-Le joueur à trois essais, si il ne gagne pas avant.
-Ce projet comporte aussi une page admin sous couvert de se connecter et d'avoir les droits d'accès, et qui permet la gestion de pâtisseries permettant d'ajouter, de modifier les quantités de patisserie et de les supprimer.
+Ce projet est une application permettant à un utilisateur lambda de pouvoir jouer au yams et de gagner des pâtisseries. 
+Le joueur a trois essais maximum, sauf s'il gagne avant, dans ce cas le jeu s'arrête.
+Ce projet comporte aussi une page admin protégée par login/mot de passe, et qui permet la gestion de pâtisseries, permettant d'en ajouter, de modifier les quantités de pâtisserie et de les supprimer.
 
 ## Membres de l'équipe
 
@@ -14,8 +14,8 @@ Ce projet comporte aussi une page admin sous couvert de se connecter et d'avoir 
 
 - **Wireframe** : https://www.figma.com/design/amhfu1LYMtPUs0zLtBKMoe/yams?node-id=0-1&t=FENK7PMfQqQc4SO8-0
 - **Notions** : https://www.notion.so/27219c671e5149fca5b242e4dcaf9de6?v=6a4fdda4c7cc407b8bb782bea40c882b
-- **Frontend** : React, Redux Toolkit, RTK Query (appel Api), React Router
-- **Backend** : Node.js, Express (non implémenté par notre groupe)
+- **Frontend** : React, Redux Toolkit, RTK Query (appel API), React Router
+- **Backend** : Express/Node.js (non implémenté par notre groupe)
 - **Persistance des données** : deux fichiers JSON dans le back : pastries.json et users.json
 
 
@@ -31,7 +31,7 @@ Ce projet comporte aussi une page admin sous couvert de se connecter et d'avoir 
 - **Importations et Déclarations**
 
 Le code commence par importer divers composants, hooks et fonctions nécessaires pour notre jeu. 
-On a aussi mes hooks useDispatch et useSelector de react-redux, qui permettent de gérer le store avec notamment
+On a aussi les hooks useDispatch et useSelector de react-redux, qui permettent de gérer le store avec notamment
 l'action rollDice de Redux.
 On a l'import d'un autre store avec le hook useGetAllPastriesQuery qui permet de récupérer les données liés aux pâtisseries gagnés. On a également l'import des hooks de base de React useEffect et useState.
 
@@ -65,7 +65,7 @@ Le composant rend les éléments de l'interface utilisateur lié au game: le mes
   - `GET /pastries` : Récupère toutes les pâtisseries
   - `PUT api/pastry/:id` : Met à jour la quantité d'une pâtisserie
   - `POST api/pastry` : Ajoute une nouvelle pâtisserie
-  - `DELETE api/pastry`: suppression de patisserie 
+  - `DELETE api/pastry`: suppression de pâtisserie 
 
 ## Instructions pour l'Installation
 
