@@ -39,7 +39,7 @@ On a l'import d'un autre store avec le hook useGetAllPastriesQuery qui permet de
 
 Le composant GameDisplay contient la mise en place et application de la logique du jeu. Il fais appel au store pour récupérer 
 l'état des dès.
- Il utilise useDispatch pour envoyer une action Redux concernant le lancement du jeu et useSelector pour récupérer des morceaux de l'état global de Redux, tels que les essais restants, l'état du jeu, si le joueur a gagné, le message et la quantité de prix. Le hook useGetAllPastriesQuery est utilisé pour obtenir les données concernant les pâtisseries en faisant un appel Api gérer par RTK query.  
+ Il utilise useDispatch pour envoyer une action Redux concernant le lancement du jeu et useSelector pour récupérer des morceaux de l'état global de Redux, tels que les essais restants, l'état du jeu, si le joueur a gagné, le message et la quantité de prix (ce sont les propriétés de l'objet global du state dès). Le hook useGetAllPastriesQuery est utilisé pour obtenir les données concernant les pâtisseries en faisant un appel Api gérer par RTK query.  
 On va initialiser useState pour créer un état local prizeMessage afin de stocker le message concernant les prix. Ce hook est nécessaire car React fonctionne sur l'immutabilité des données et on a besoin de lui donc pour muter cette donnée.
 
 - **Gestion des événements**
