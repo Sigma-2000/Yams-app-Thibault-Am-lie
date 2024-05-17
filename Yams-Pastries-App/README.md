@@ -40,4 +40,12 @@ Ce projet comporte aussi une page admin sous couvert de se connecter et d'avoir 
 1. Clonez le dépôt :
    ```bash
    git clone 
-   cd votre-repo
+   cd Yams-Pastries-App
+   npm install
+   npm run dev
+2. Clonez le dépôt de l'Api :
+   ```bash
+   git clone https://github.com/Antoine07/REACTFSD50/blob/main/yams_api/TP/yams_sujet.md
+   npm install
+   npm run dev
+
