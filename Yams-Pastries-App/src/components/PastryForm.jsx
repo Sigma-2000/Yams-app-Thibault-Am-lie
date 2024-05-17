@@ -31,7 +31,7 @@ const PastryForm = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-pastry">
       <h3>Ajout de nouveau produit</h3>
       <form method="post" className="form-group" onSubmit={handleSubmit}>
         <div>
