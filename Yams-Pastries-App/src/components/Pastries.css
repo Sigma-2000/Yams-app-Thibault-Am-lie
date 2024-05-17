@@ -26,6 +26,9 @@
 
 
 .pastries-content li {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
   padding: 10px 20px;
   margin-bottom: 10px;
   background-color: #fff;
@@ -45,13 +48,13 @@
 .button-green {
   background-color: #28a745;
   color: #fff;
+  /*margin: 5px;*/
 }
 
 .button-green:hover {
   background-color: #218838;
 }
 
-/* Red button styles */
 .button-red {
   background-color: #dc3545;
   color: #fff;
