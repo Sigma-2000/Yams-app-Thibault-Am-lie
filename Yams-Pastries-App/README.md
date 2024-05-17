@@ -15,7 +15,7 @@ Ce projet comporte aussi une page admin sous couvert de se connecter et d'avoir 
 - **Wireframe** : https://www.figma.com/design/amhfu1LYMtPUs0zLtBKMoe/yams?node-id=0-1&t=FENK7PMfQqQc4SO8-0
 - **Notions** : https://www.notion.so/27219c671e5149fca5b242e4dcaf9de6?v=6a4fdda4c7cc407b8bb782bea40c882b
 - **Frontend** : React, Redux Toolkit, RTK Query (appel Api)
-- **Backend** : Node.js, Express
+- **Backend** : Node.js, Express (non implémenté par notre groupe)
 - **Persistance des données** :  stockage dans des stores redux 
 
 ## Fonctionnalités
@@ -55,7 +55,7 @@ La classe CSS pour le message est déterminée en fonction de si le joueur a gag
 
 - **Rendu du composant**
 
-Le composant rend les éléments de l'interface utilisateur, affichant les composants PresentationRegles et Dice, le message de jeu, le message de prix, et un bouton qui permet de lancer le dé. Ce bouton est désactivé si le jeu n'est pas actif (se base sur le state des dès).
+Le composant rend les éléments de l'interface utilisateur, affichant les composants PresentationRegles et Dice, le message de jeu, le message de prix, et un bouton qui permet de lancer le dé. Ce bouton est désactivé si le jeu n'est pas actif (se base sur le state des dès). En amélioration principale je pense que j'aurai pu mettre dans un composant à part cette partie et l'implémenter au même titre que Dice et PresentationPage pour que le composant page Game ne soit qu'un composant d'affichage. Ce qui aurait rendu encore plus modulable l'app. 
 
 ### Fonctionnement du Backend
 
