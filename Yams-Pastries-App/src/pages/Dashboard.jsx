@@ -1,4 +1,6 @@
 import Pastries from "../components/Pastries"
+import PastryForm from "../components/PastryForm";
+import './Dashboard.css';
 
 function Dashboard() {
  
@@ -7,6 +9,7 @@ function Dashboard() {
      
       <div className="dashboard-content">
         <Pastries/>
+        <PastryForm/>
       </div>
     </div>
   );

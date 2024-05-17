@@ -19,8 +19,19 @@ export const crudApi = createApi({
         return response;
       },
     }),
+    addPastry: builder.mutation({
+      query: (newPastry) => ({
+        url: `/api/pastry`,
+        method: "POST",
+        body: newPastry,
+      }),
+      transformResponse: (response) => {
+        console.log(response);
+        return response;
+      },
+    }),
   }),
 });
 
 
-export const { useAddQuantityMutation } = crudApi;
+export const { useAddQuantityMutation, useAddPastryMutation } = crudApi;
