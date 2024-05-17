@@ -1,13 +1,9 @@
-import PresentationRegles from "../components/PresentationRegles";
-import Dice from "../components/Dice";
-import GameDisplay from "../components/GameDisplay";
 import { useDispatch, useSelector } from "react-redux";
 import { rollDice } from "../features/diceFeature/diceReducer";
-import "./Game.css";
 import { useGetAllPastriesQuery } from "../features/pastriesFeature/pastriesReducer";
 import { useEffect, useState } from "react";
 
-function Game() {
+function GameDisplay(){
   const dispatch = useDispatch();
   const { trials, gameActive, hasWon, message, prizeQuantity } = useSelector(
     (state) => state.dice
@@ -42,13 +38,20 @@ function Game() {
     ? "Vous avez gagné!"
     : "Plus d'essais";
 
-  return (
-    <>
-      <PresentationRegles />
-      <Dice />
-      <GameDisplay />
-    </>
-  );
+    return (
+      <>
+        <div className={messageClass}>{message}</div>
+        <div className="prize">{prizeMessage}</div>
+        <div className="button-container">
+        <button
+          onClick={handleRollDice}
+          disabled={!gameActive}
+          className={!gameActive ? "button-disabled" : ""}
+        >
+          {buttonText}
+        </button>
+        </div>
+      </>
+    );
 }
-
-export default Game;
+export default GameDisplay;
