@@ -25,6 +25,37 @@ Ce projet comporte aussi une page admin sous couvert de se connecter et d'avoir 
 - Modification de la quantité des pâtisseries
 - Suppression de pâtisseries
 
+## Présentation du code de la page Game.jsx
+## Structure du Code
+- **Importations et Déclarations**
+
+Le code commence par importer divers composants, hooks et fonctions nécessaires pour notre jeu. Cela inclut les composants PresentationRegles et Dice. J'ai choisi d'externaliser cela pour rendre mon code modulable, réutilisable et avoir des fichiers de code assez petit. 
+On a aussi mes hooks useDispatch et useSelector de react-redux, qui permettent de gérer le store avec notamment
+l'action rollDice de Redux.
+On a l'import d'un autre store avec le hook useGetAllPastriesQuery qui permet de récupérer les données liés aux pâtisseries gagnés. On a également l'import du css ainsi que les hooks de base de React useEffect et useState.
+
+- **Composant Game**
+
+Le composant Game contient la mise en place et application de la logique du jeu. Il fais appel au store pour récupérer 
+l'état des dès.
+ Il utilise useDispatch pour envoyer une action Redux concernant le lancement du jeu et useSelector pour récupérer des morceaux de l'état global de Redux, tels que les essais restants, l'état du jeu, si le joueur a gagné, le message et la quantité de prix. Le hook useGetAllPastriesQuery est utilisé pour obtenir les données concernant les pâtisseries en faisant un appel Api gérer par RTK query.  
+On va initialiser useState pour créer un état local prizeMessage afin de stocker le message concernant les prix. Ce hook est nécessaire car React fonctionne sur l'immutabilité des données et on a besoin de lui donc pour muter cette donnée.
+
+- **Gestion des événements**
+
+La fonction handleRollDice est appelée lorsque le joueur clique sur le bouton pour lancer le dé. Elle envoie l'action rollDice à Redux pour mettre à jour l'état du jeu et des dès, le state va alloir change.
+
+- **Use Effect et appel Api**
+ useEffect s'exécute lorsque hasWon, prizeQuantity, ou data changent, cela évite les effets de bords et d'appeler l'Api au chargement du composent. C'est d'ailleurs pour cela qu'on a mis dans le tableau des dépendances data afin d'indiquer que Use Effect doit surveiller ces données et se déclencher que lorsqu'elles ont changés. Si le joueur a gagné, que des prix sont disponibles et que les données des pâtisseries sont présentes, il sélectionne au hasard des pâtisseries pour les attribuer comme prix. Les pâtisseries disponibles sont filtrées, triées aléatoirement, et sélectionnées en nombre nécessaire pour les prix. Si les pâtisseries disponibles sont suffisantes, un message est généré avec les noms des pâtisseries. Sinon, un message indique qu'il n'y a pas assez de pâtisseries disponibles.
+ Un des axes d'améliorations possibles et que j'aurai du mettre cette logique de fonction aléatoire peut étre dans services game et l'importer. 
+
+- **Gestion des classes et texte du bouton**
+
+La classe CSS pour le message est déterminée en fonction de si le joueur a gagné ou perdu, il dépend de l'état du state des dès donc. Le texte du bouton est défini en fonction de l'état du jeu (se base sur le même principe de state) : s'il reste des essais, il affiche le nombre d'essais restants ; si le joueur a gagné, il affiche un message de victoire ; sinon, il indique qu'il n'y a plus d'essais.
+
+- **Rendu du composant**
+
+Le composant rend les éléments de l'interface utilisateur, affichant les composants PresentationRegles et Dice, le message de jeu, le message de prix, et un bouton qui permet de lancer le dé. Ce bouton est désactivé si le jeu n'est pas actif (se base sur le state des dès).
 
 ### Fonctionnement du Backend
 
